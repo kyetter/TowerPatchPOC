@@ -1,16 +1,16 @@
 ---
 - name: copy over playbook
   copy:
-    src: 
-      - files/update.yml
-      - files/ansible.cfg
-      - files/inventory
+    src: "{{ item }}" 
     dest: /home/kyetter/irs/AnsiblePOC/execution/
     owner: kyetter
     group: kyetter
-
+  loop:
+    - files/update.yml
+    - files/ansible.cfg
+    - files/inventory
 - name: run the playbook 
   command: ansible-playbook update.yml
-    args: 
-      chdir: /home/kyetter/irs/AnsiblePOC/execution/ansible-playbook/
+  args: 
+    chdir: /home/kyetter/irs/AnsiblePOC/execution/
 

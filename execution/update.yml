@@ -30,7 +30,7 @@
 
     - name: start final job on tower
       uri:
-        url: https://192.168.122.5/api/v2/job_templates/"Demo Job Template"/launch/
+        url: https://192.168.122.5/api/v2/job_templates/3/launch/
         method: POST
         user: admin
         password: babysavannah

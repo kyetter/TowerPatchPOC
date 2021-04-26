@@ -1,3 +1,7 @@
 ---
 - name: import the role
-  import_role: tower-patching
+  hosts: localhost
+  connection: local 
+  tasks:
+    - import_role: 
+        name: tower-patching
