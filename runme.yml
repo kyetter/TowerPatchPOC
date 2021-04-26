@@ -1,7 +1,6 @@
 ---
 - name: import the role
-  hosts: localhost
-  connection: local 
+  host: 192.168.0.21
   tasks:
     - import_role: 
         name: tower-patching
