@@ -1,14 +1,17 @@
 ---
 - name: copy over playbook
   copy:
-    src: "{{ item }}" 
-    dest: /home/kyetter/irs/AnsiblePOC/execution/
+    src: "{{ item.src }}" 
+    dest: /home/kyetter/irs/AnsiblePOC/execution/{{item.dest}}
     owner: kyetter
     group: kyetter
   loop:
-    - files/update.yml
-    - files/ansible.cfg
-    - files/inventory
+    - src: files/update.yml
+      dest: update.yml
+    - src: files/ansible.cfg
+      dest: ansible.cfg
+    - src: files/inventory
+      dest: inventory
 - name: run the playbook 
   command: ansible-playbook update.yml
   args: 
