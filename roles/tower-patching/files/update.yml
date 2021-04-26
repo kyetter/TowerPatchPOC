@@ -30,8 +30,13 @@
 
     - name: start final job on tower
       uri:
-        url: https://192.168.122.5/api/v2/job_templates/"Demo Job Template"/launch/
+        url: https://192.168.122.5/api/v2/job_templates/Demo%20Job%20Template/launch/
         method: POST
+        validate_certs: no
+        force_basic_auth: yes  
+        status_code: 
+          - 200
+          - 201
         user: admin
         password: babysavannah
 
