@@ -1,0 +1,35 @@
+---
+name: update ansible tower servers
+hosts: all
+tasks:
+  - name: dnf update
+    dnf:
+      name: '*'
+      state: latest
+      skip_broken: yes
+
+  - name: reboot server
+    reboot:
+
+  - name: check OS
+    command: cat /etc/remote-os
+    register: os-version
+
+  - name: print out OS version
+    debug:
+      var: os-version
+
+  - name: make sure ansible is up
+    become: yes
+    systemd:
+      name: ansible-tower
+      state: started
+      enabled: yes
+
+  - name: start final job on tower
+    uri:
+      url: https://192.168.122.5/api/v2/job_templates/3/launch/
+      method: POST
+      user: admin
+      password: babysavannah
+
