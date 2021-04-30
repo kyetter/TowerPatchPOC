@@ -1,0 +1,15 @@
+---
+- name: create project
+  hosts: 192.168.122.5
+  vars:
+    name: "project"
+    description: "I made this using Ansible"
+    organization: "Default"
+  tasks:
+    - name: create project
+      awx.awx.tower_project:
+        name: "{{ name }}"
+        description: "{{ description }}"
+        organization: "{{ organization }}"
+        state: present
+        validate_certs: false
