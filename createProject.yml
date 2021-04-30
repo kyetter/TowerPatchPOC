@@ -1,6 +1,6 @@
 ---
 - name: create project
-  hosts: 192.168.122.5
+  hosts: all 
   tasks:
     - name: create project
       tower_project:
