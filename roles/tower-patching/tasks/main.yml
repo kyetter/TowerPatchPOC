@@ -1,10 +1,14 @@
 ---
+- name: create tower folder
+  file:
+    src: ansible
+    state: directory
 - name: copy over playbook
   copy:
     src: "{{ item.src }}" 
-    dest: /home/kyetter/irs/AnsiblePOC/execution/{{item.dest}}
-    owner: kyetter
-    group: kyetter
+    dest: /home/admin/ansible
+    owner: admin
+    group: admin
   loop:
     - src: files/update.yml
       dest: update.yml
