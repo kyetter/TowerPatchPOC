@@ -19,5 +19,5 @@
 - name: run the playbook 
   shell: nohup ansible-playbook update.yml &
   args: 
-    chdir: /home/kyetter/irs/AnsiblePOC/execution/
+    chdir: /home/admin/ansible
 
