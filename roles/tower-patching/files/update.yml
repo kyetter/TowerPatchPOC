@@ -1,6 +1,7 @@
 ---
 - name: update ansible tower servers
   hosts: 192.168.122.5
+  remote_user: kyetter
   tasks:
     - name: dnf update
       become: yes
