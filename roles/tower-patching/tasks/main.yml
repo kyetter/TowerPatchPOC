@@ -1,7 +1,7 @@
 ---
 - name: create tower folder
   file:
-    src: ansible
+    path: /home/admin/ansible
     state: directory
 - name: copy over playbook
   copy:
