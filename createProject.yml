@@ -6,6 +6,7 @@
       pip:
         name: ansible-tower-cli
         state: present
+      become: yes
           #    - name: set up ansible tower cli configs
           #command: tower-cli config host https://192.168.122.5/
     - name: create project
