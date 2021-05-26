@@ -25,3 +25,4 @@
         role: admin
         project: "{{ name}}"
         state: present
+        validate_certs: false
