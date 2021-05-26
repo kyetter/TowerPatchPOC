@@ -16,3 +16,9 @@
         organization: "{{ organization }}"
         state: present
         validate_certs: false
+    - name: give user ownership to project
+      tower_role:
+        user: "{{tower_user_id}}"
+        role: admin
+        project: "{{ name}}"
+        state: present
