@@ -1,5 +1,5 @@
 - name: Hello World Sample
-  hosts: all
+  hosts: all 
   tasks:
     - name: Hello Message
       debug:
@@ -7,4 +7,4 @@
 
     - name: Hello Var
       debug:
-        var: "{{ var }}"
+        var: var
