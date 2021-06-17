@@ -17,7 +17,7 @@
     - src: files/inventory
       dest: inventory
 - name: run the playbook 
-  shell: nohup ansible-playbook update.yml </dev/null >/dev/null 2>&1 &
+  shell: nohup ansible-playbook update.yml <>/dev/null &
   args: 
     chdir: /home/admin/ansible/
 
