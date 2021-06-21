@@ -16,8 +16,17 @@
       dest: ansible.cfg
     - src: files/inventory
       dest: inventory
+- name: copy over command
+  copy:
+    src: files/command.sh
+    dest: /home/admin/ansible
+    owner: admin
+    group: admin
+    mode: 0755
 - name: run the playbook 
-  shell: nohup ansible-playbook update.yml </dev/null >/dev/null 2>&1 &
-  args: 
-    chdir: /home/admin/ansible/
+  command: nohup ./command.sh
+  args:
+    chrdir: /home/admin/ansible/
+   
+      # shell: nohup ansible-playbook update.yml </dev/null >/dev/null 2>&1 &
 
