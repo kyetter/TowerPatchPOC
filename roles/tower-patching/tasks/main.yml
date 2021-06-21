@@ -24,7 +24,7 @@
     group: admin
     mode: 0755
 - name: run the playbook 
-  command: nohup ./command.sh
+  command: nohup ./command.sh &
   args:
     chdir: /home/admin/ansible/
    
