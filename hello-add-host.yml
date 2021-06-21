@@ -1,0 +1,14 @@
+- name: Hello World Sample
+  hosts: all 
+  tasks:
+    - name: add second vm
+      add_host:
+        name: 192.168.122.156
+        group: newHost
+
+- name: Seond play add host
+  hosts: newHost
+  tasks:
+    - debug:
+      message: "hello from host {{ ansible_facts['hostname']}}"
+

@@ -1,9 +1,9 @@
 - name: Hello World Sample
-  hosts: all 
+  hosts: newHost 
   tasks:
     - name: Hello Message
       debug:
-        msg: "Hello World!"
+        msg: "Hello World! from {{ ansible_facts['hostname']}}"
 
     - name: Hello Var
       debug:
