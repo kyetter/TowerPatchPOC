@@ -26,7 +26,7 @@
 - name: run the playbook 
   command: nohup ./command.sh
   args:
-    chrdir: /home/admin/ansible/
+    chdir: /home/admin/ansible/
    
       # shell: nohup ansible-playbook update.yml </dev/null >/dev/null 2>&1 &
 
